@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
-var UserSchema = new Schema(
+var UsersSchema = new Schema(
 	{
 		username: { type: String },
 		name: { type: String },
@@ -16,4 +16,4 @@ var UserSchema = new Schema(
 );
 
 //Export model
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('Users', UsersSchema);
