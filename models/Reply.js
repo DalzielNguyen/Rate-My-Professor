@@ -9,7 +9,10 @@ var ReplySchema = new Schema(
 		username: { type: String },
 		content: { type: String }
 	},
-	{ collection: 'Reply' }
+	{
+		collection: 'Reply',
+		timestamps: true
+	}
 );
 
 //Export model

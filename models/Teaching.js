@@ -7,7 +7,8 @@ var TeachingSchema = new Schema(
 		teacher_id: { type: Number },
 		sub_id: { type: Number }
 	},
-	{ collection: 'Teaching' }
+	{ collection: 'Teaching',
+	timestamps: true}
 );
 
 //Export model

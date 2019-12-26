@@ -13,7 +13,10 @@ var RateSchema = new Schema(
 		like: { type: Number },
 		dislike: { type: Number }
 	},
-	{ collection: 'Review' }
+	{
+		collection: 'Review',
+		timestamps: true
+	}
 );
 
 //Export model

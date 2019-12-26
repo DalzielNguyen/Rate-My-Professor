@@ -13,7 +13,8 @@ var TeacherSchema = new Schema(
 		rating: { type: Schema.Types.Decimal128 },
 		is_hidden: { type: Boolean }
 	},
-	{ collection: 'Teacher' }
+	{ collection: 'Teacher',
+	timestamps: true}
 );
 
 //Export model

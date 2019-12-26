@@ -12,7 +12,8 @@ var ReportSchema = new Schema(
 		reason: { type: String },
 		processed: { type: Boolean }
 	},
-	{ collection: 'Report' }
+	{ collection: 'Report',
+	timestamps: true}
 );
 
 //Export model

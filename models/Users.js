@@ -8,12 +8,12 @@ var UsersSchema = new Schema(
 		email: { type: String },
 		name: { type: String },
 		avatar: { type: String },
-		created: { type: Date },
 		is_admin: { type: Boolean },
 		password: { type: String },
 		unlock: { type: Date }
 	},
-	{ collection: 'Users' }
+	{ collection: 'Users',
+	timestamps: true}
 );
 
 //Export model

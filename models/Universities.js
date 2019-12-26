@@ -9,7 +9,8 @@ var UniversitiesSchema = new Schema(
 		address: { type: String },
 		photo: { type: String }
 	},
-	{ collection: 'Universities' }
+	{ collection: 'Universities',
+	timestamps: true}
 );
 
 //Export model

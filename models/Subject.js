@@ -7,7 +7,8 @@ var SubjectSchema = new Schema(
 		sub_id: { type: Number },
 		name: { type: String }
 	},
-	{ collection: 'Subject' }
+	{ collection: 'Subject',
+	timestamps: true}
 );
 
 //Export model

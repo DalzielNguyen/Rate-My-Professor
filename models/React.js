@@ -8,7 +8,10 @@ var ReactSchema = new Schema(
 		username: { type: String },
 		react: { type: Boolean }
 	},
-	{ collection: 'React' }
+	{
+		collection: 'React',
+		timestamps: true
+	}
 );
 
 //Export model
