@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
-const IP = 'localhost:27017'
-const DATABASE = '1712227'
+const IP = 'localhost:27017';
+const DATABASE = 'myproject';
 mongoose
-    .set('useNewUrlParser', true)
-    .set('useFindAndModify', false)
-    .set('useCreateIndex', true)
-    .connect(`mongodb://${IP}/${DATABASE}`)
-    .then(() => console.log('Connected to MongoDB...'))
-    .catch(() => console.error('Could not connect to MongoDB...'));
+	.set('useNewUrlParser', true)
+	.set('useFindAndModify', false)
+	.set('useCreateIndex', true)
+	.connect(`mongodb://${IP}/${DATABASE}`)
+	.then(() => console.log('Connected to MongoDB...'))
+	.catch(() => console.error('Could not connect to MongoDB...'));
