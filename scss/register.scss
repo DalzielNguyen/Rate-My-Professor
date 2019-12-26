@@ -1,0 +1,35 @@
+#register{
+  width: 30%;
+  margin: 2em auto;
+  h1{
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .signup{
+    color: #b3d138;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  form{
+    margin: 0 auto;
+    .form-group{
+      .form-control{
+        padding: 10px 16px;
+        height: auto;
+      }
+    }
+    .submit{
+      margin: 2em 0;
+      text-align: center;
+      button{
+        color: #fff;
+        background: $primary;
+        border-radius: 2px;
+        padding: 0.75em 4em;
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

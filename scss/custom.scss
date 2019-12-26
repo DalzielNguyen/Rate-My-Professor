@@ -1,0 +1,124 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  color: $dark;
+  background: #ecf0f1;
+}
+
+header {
+  .navbar{
+    padding: 0 3em;
+    background-color: $background;
+    a.navbar-brand{
+      margin-right: 1.5em;
+      img{
+        height: 50px;
+        margin-bottom: -5px;
+      }
+    }
+    .navbar-collapse{
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 20px 0;
+      border-bottom: 2px solid #ddd;
+      .navbar-brand-text{
+        font-size: 1.5em;
+      }
+      .navbar-nav{
+        font-size: 0.9em;
+        .nav-item{          
+          padding-right: 5em;
+        }
+      }
+    }
+    .nav-login{
+      text-transform: uppercase;
+      a{
+        color: #fff;
+        border-radius: 3px;
+        padding: 1em;
+        background-color: $primary;
+      }
+    }
+  }
+}
+
+footer{
+  padding: 4em 10%;
+  background: #f4f6f8;
+  .col-first{
+    .schedule{
+      color: #666;
+      font-size: 0.9em;
+      font-weight: 500;
+    }
+    .socials{
+      .social-link{
+        margin: 0 7px;
+        border: 2px solid $primary;
+        border-radius: 50%;
+        width: 2em;
+        font-size: 1.25em;
+        height: 2em;
+        line-height: 1.9em;
+        text-align: center;
+        color: $primary;
+        display: inline-block;
+        &:hover{
+          background: $primary;
+          color: #fff;
+        }
+      }
+    }
+  }
+  .footer-menu{
+    h4{
+      font-size: 0.9em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 1em;
+      font-weight: 600;
+    }
+    p{
+      margin-bottom: 0.75em;
+    }
+  }
+  .col-last{
+    .brand{
+      img{
+        width: 128px;
+      }
+    }
+    h3{
+      font-size: 1.5em;
+      margin: 0.5em 0 0.25em;
+    }
+    .author{
+      font-size: 0.9em;
+    }
+  }
+  .copyright{
+    margin-top: 2em;
+    font-size: 0.9em;
+    color: #aaa;
+    margin-bottom: 0;
+  }
+}
+
+.form-control{
+  color: #81858a;
+  font-weight: 300;
+  &:focus{
+    color: #81858a;
+  }
+  &::placeholder{
+    color: #a0a3a7;
+    font-style: italic;
+  }
+}
+
+.hr{
+  border-bottom: 1px solid #aaa;
+  width: 65px;
+  margin: 1em auto 3em;
+}

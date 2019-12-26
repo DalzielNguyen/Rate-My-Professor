@@ -1,0 +1,36 @@
+#login{
+  width: 30%;
+  margin: 5em auto;
+  text-align: center;
+  h1{
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .signup{
+    color: #b3d138;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  form{
+    width: 60%;
+    margin: 0 auto;
+    .form-group{
+      .form-control{
+        padding: 10px 16px;
+        height: auto;
+      }
+    }
+    .submit{
+      margin-top: 2em;
+      button{
+        color: #fff;
+        background: $primary;
+        border-radius: 2px;
+        padding: 0.75em 4em;
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

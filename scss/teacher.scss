@@ -1,0 +1,282 @@
+#teacher{
+  .heading{
+    display: flex;
+    padding: 3em 20%;
+    background: $background;
+    justify-content: center;
+    .col-left{
+      width: 40%;
+      margin-right: 2em;
+      .avatar{
+        img{
+          width: 100%;
+          border-radius: 5px;
+          box-shadow: 0 10px 20px rgba(0,0,0,.2);
+        }
+      }
+    }
+    .col-right{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      h1, h2{
+        text-transform: uppercase;
+      }
+      h1{
+        color: $primary;
+        margin-bottom: 0.15em;
+        font-weight: 600;
+        line-height: 1;
+      }
+      h2{
+        font-weight: 300;
+        font-size: 1.75em;
+      }
+      h3{
+        font-size: 1.25em;
+        font-weight: 300;
+        span{
+          color: $primary;
+          font-weight: 600;
+        }
+      }
+      .rating{
+        .rate{
+          font-size: 5em;
+          span{
+            color: #158060;
+            font-weight: 600;
+          } 
+          small{
+            font-size: 0.4em;
+            font-weight: 300;
+            color: #999;
+          }
+        }
+        .stars{
+          color: #158060;
+          font-size: 1.5em;
+        }
+        .count{
+          font-size: 1.1em;
+          color: #666;
+          font-weight: 300;
+          span{
+            color: $primary;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+  .info{
+    padding: 2em 10%;
+  }
+  .post{
+    padding: 2em 20%;
+    background: $background;
+    #rate{
+      display: flex;
+      .col-left{
+        
+      }
+      .col-right{
+        padding-left: 2em;
+        flex: 1;
+      }
+      .stars{
+        float: left;
+        p{
+          margin-bottom: 5px;
+        }
+        input{
+          display: none;
+          &:checked{
+            &  ~ label:hover,
+            & + label:hover,
+            & ~ label:hover ~ label{
+              color: #158060;
+            }
+            & ~ label{
+              &:before{
+                content: "\f005";
+                font-weight: 900;
+                color: #158060
+              }
+            }
+          }
+          &:not(:checked){
+            & + label:hover,
+            & + label:hover ~ label{
+              &:before{
+  
+                color: #158060;
+              }
+            }
+          }
+        }
+        label{
+          color: #999;
+          float: right;
+          &:before{
+            font-size: 2em;
+            display: inline-block;
+            font-family: "Font Awesome 5 Pro";
+            content: "\f005";
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1;
+          }
+          &:hover ~ input:checked ~ label{
+            color: #158060;
+          }
+        }
+      }
+      .rate-content{
+        padding: 8px 14px;
+        background: transparent;
+        color: #333;
+      }
+      .rate-submit{
+        margin-top: 1em;
+        float: right;
+        background: $primary;
+        color: #fff;
+        padding: 0.5em 3em;
+        height: auto;
+        border-radius: 2px;
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+  .comments{
+    padding: 2em 20%;
+    .comment{
+      display: flex; 
+      margin: 1.25em 0;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 1.25em;
+      p{
+        margin: 0;
+      }
+      .col-left{
+        width: 27.5%;
+        .stars{
+          i{
+            font-size: 2em;
+            display: inline-block;
+          }
+          .fas.fa-star{
+            color: #158060;
+          }
+          .far.fa-star{
+            color: #999;
+          }
+        }
+        .react{
+          margin-top: 0.75em;
+          .btn-react{
+            height: auto;
+            padding: 0.3em 0.8em;
+            color: #fff;
+            margin-right: 4px;
+            &.like{
+              background: $primary;
+            }
+            &.dislike{
+              background: #e74c3c;
+            }
+            &:hover{
+              opacity: .8;
+            }
+          }
+          .btn-report{
+            height: auto;
+            padding: 0.3em 0.5em;
+            color: #fff;
+            background: #b3d139;
+          }
+        }
+      }
+      .col-right{
+        flex: 1;
+        .top{
+          span{
+            display: inline-block;
+            background: #158060;
+            padding: 0.2em 0.6em;
+            color: #fff;
+            border-radius: 3px;
+            margin-bottom: 1em;
+            font-weight: 500;
+            i{
+              color: #fdcb6e;
+            }
+          }
+        }
+        .metadata{
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 0.25em;
+          span{
+            display: inline-block;
+          }
+          .author{
+            color: $primary;
+            font-weight: 600;
+          }
+          .time{
+            color: #999;
+            font-size: 0.9em;
+            font-style: italic;
+            font-weight: 300;
+          }
+        }
+        .replies{
+          margin-top: 1em;
+          .reply-text{
+            font-weight: 500;
+            margin-bottom: 0.5em;
+            a{
+              color: #158060;
+            }
+          }
+          .reply{
+            margin-bottom: 0.75em;
+            padding-left: 1em;
+            .metadata{
+              margin: 0;
+            }
+          }
+          .reply-form{
+            .reply-content{
+              padding: 8px 14px;
+              background: transparent;
+              color: #333;
+              font-size: 1em;
+            }
+            .reply-submit{
+              font-size: 1em;
+              margin-top: 0.5em;
+              float: right;
+              background: $primary;
+              color: #fff;
+              padding: 0.5em 3em;
+              height: auto;
+              border-radius: 2px;
+              &:hover{
+                opacity: 0.8;
+              }
+            }
+          }
+        }
+      }
+      &.top{
+
+      }
+    }
+  }
+}

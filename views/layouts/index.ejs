@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title><%= title %></title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,500i,700&display=swap&subset=vietnamese" rel="stylesheet">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#"><img src="./img/logo.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-brand-text" href="#">RateMyProfessors</div>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">SCHOOLS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">PROFESSORS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">BLOG</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">CONTACTS US</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-login">
+        <a href="#">LOG IN/ SIGN UP</a>
+      </div>
+    </nav>
+  </header>
+  <%- body %>
+  <footer>
+    <div class="row">
+      <div class="col-md-3 col-first">
+        <p class="schedule">
+          Schedule a conversation <a href="#"><b>hello@ratemyprofessors.com</b></a>
+        </p>
+        <p class="phone">
+          <i class="fas fa-phone"></i> +84 988 XXX XXX
+        </p>
+        <div class="socials">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="col-md-2 col-second footer-menu">
+        <h4>Company</h4>
+        <p>Resources</p>
+        <p>Careers</p>
+      </div>
+      <div class="col-md-3 col-third footer-menu">
+        <h4>Legal</h4>
+        <p>NMLS Consumer Access</p>
+        <p>Privacy Policy</p>
+        <p>Terms of Use</p>
+        <p>Disclosures & Licensing </p>
+      </div>
+      <div class="col-md-4 col-last">
+        <div class="brand"><a href="#"><img src="./img/logo.png"></a></div>
+        <h3>RateMyProfessors</h3>
+        <p class="author">Create by Team 16 - HCMUS</p>
+      </div>
+    </div>
+    <p class="copyright">
+      © 2019 Team16, Inc. All rights reserved. 
+    </p>
+  </footer>
+</body>
