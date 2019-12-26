@@ -3,6 +3,8 @@ const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const session = require('express-session');
 const logger = require('morgan');
 
 var app = express();
@@ -16,9 +18,14 @@ app.set('layout extractStyles', true);
 app.use(expressLayouts);
 
 app.use(logger('dev'));
+app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+	secret: 'RateMyProfessors',
+	saveUninitialized: true,
+	resave: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 require('./Database');
