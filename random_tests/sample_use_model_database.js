@@ -10,23 +10,23 @@ mongoose.connection.on('open', function(ref) {
 });
 
 // Just test if our model work ok !
-var Rate = require('./models/Rate');
-Rate.find({}, function(err, rate) {
+var model = require('./models/Rate');
+model.find({}, function(err, model) {
 	console.log('List all Reviews');
-	console.log(rate);
+	console.log(model);
 });
-Rate = require('./models/Users');
-Rate.find({}, function(err, rate) {
+model = require('./models/Users');
+model.find({}, function(err, model) {
 	console.log('List all Users');
-	console.log(rate);
+	console.log(model);
 });
 
 // Test if import successfully
 var University = require('./models/Universities');
 var unidoc = new University({
 	uni_id: 7,
-	name: 'Trường Đại học Sư phạm',
-	address: '280 An Dương Vương, Phường 4, Quận 5, Thành phố Hồ Chí Minh',
+	name: 'Trường Đasdasd',
+	address: '280 An asdasdasd',
 	photo: ''
 });
 unidoc.save(function(err) {
