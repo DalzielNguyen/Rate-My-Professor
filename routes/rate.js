@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('home', { title: 'Teacher'});
 });
 
-router.get('/:id', TeacherController.get);
-router.post('/:id', TeacherController.postRate);
+router.post('/:id', TeacherController.postReply);
+router.put('/:id', TeacherController.putRate);
 
 module.exports = router;

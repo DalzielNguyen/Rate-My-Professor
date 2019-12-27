@@ -1,11 +1,13 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+require('./Rate');
 
-var Schema = mongoose.Schema;
-
-var ReplySchema = new Schema(
+const ReplySchema = new Schema(
 	{
-		reply_id: { type: Number },
-		review_id: { type: Number },
+		review_id: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'Rate',
+		},
 		username: { type: String },
 		content: { type: String }
 	},
@@ -14,6 +16,12 @@ var ReplySchema = new Schema(
 		timestamps: true
 	}
 );
+
+ReplySchema.virtual('user', {
+  ref: 'Users',
+  localField: 'username',
+  foreignField: 'username',
+});
 
 //Export model
 module.exports = mongoose.model('Reply', ReplySchema);

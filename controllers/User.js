@@ -45,14 +45,13 @@ class UserController {
       name: data.name,
     }).save().then(function() {
       json.message = 'Successfully!';
+      req.session.username = data.username;
       code = 200;
     }).catch(function (err) {
       if (err.errors.username || err.errors.email) {
         json.message = 'Username or Email is has existed!';
-        console.log(json);
       }
     });
-    console.log('hiih');
     return res.status(code).json(json);
   }
 }
