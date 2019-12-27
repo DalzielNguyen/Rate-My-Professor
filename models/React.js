@@ -6,7 +6,6 @@ var ReactSchema = new Schema(
 	{
 		review_id: {
 			type: Schema.Types.ObjectId,
-			ref: 'Rate',
 		},
 		username: {type: String},
 		react: {type: Boolean}
