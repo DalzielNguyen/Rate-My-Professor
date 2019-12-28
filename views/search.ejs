@@ -1,10 +1,10 @@
 <main id="search">
-  <h1>Search Results for <b><%=query%></b>: 1 results</h1>
+  <h1>Search Results for <b><%=query%></b>: <%=len_res%> results</h1>
   <div class="search-box">
     <form id="formSearch2" action="" method="POST">
       <div class="form-group search">
         <div class="input-group">
-          <input class="form-control" type="text" value=<%=query%> placeholder="Find the professor/school/something..." aria-label="Search">
+          <input class="form-control" type="text" name="data" value=<%=query%> placeholder="Find the professor/school/something..." aria-label="Search">
           <div class="input-group-append">
             <button class="btn input-group-text">
               <i class="fal fa-search"aria-hidden="true"></i>
@@ -24,7 +24,7 @@
         <div class="col-6">
         </div>
       </div>
-    </formid="formSearch" action="" method="POST">       
+    </form>       
   </div>
   <div class="results">
     <div class="results-heading">
@@ -34,19 +34,15 @@
     </div>
     <div class="results-body">
       <ul>
+        <% for (var i = 0; i < len_res; i++) { %>
         <li>
-          <a href="#">
+          <a href="/teacher/<%= list_res[i].teacher_id %>">
             <span class="th cate"><i class="fas fa-chalkboard-teacher"></i>Teacher</span>
-            <span class="th name">Tran Minh Triet</span>
+            <span class="th name"><%= list_res[i].name %></span>
             <span class="th">HCMUS</span>
           </a>
         </li>
-        <li>
-          <a href="#">
-            <span class="th cate"><i class="fas fa-school"></i>School</span>
-            <span class="th name">HCMUS</span>
-          </a>
-        </li>
+        <% } %>
       </ul>
     </div>
   </div>

@@ -5,9 +5,16 @@ class SearchController {
 		const data = req.params;
 		const Teachers = await Model.find({ $text: { $search: data.text } }).exec();
 		console.log(Teachers);
-
+		console.log(Teachers.length);
 		// TODO: tìm kiếm ra 1 đống data để in ở trang search
-		res.render('search', { query: data.text });
+		res.render('search', { query: data.text, len_res: Teachers.length, list_res: Teachers });
+	}
+	async postSearch(req, res, next) {
+		let json = {};
+		let code = 200;
+		const data = req.body;
+		res.redirect('/search/' + data.data);
+		return res.status(code).json(json);
 	}
 }
 

@@ -6,5 +6,5 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:text', SearchController.getSearch);
-
+router.post('/:old_text', SearchController.postSearch);
 module.exports = router;
