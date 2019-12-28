@@ -3,10 +3,9 @@ var router = express.Router();
 var SearchController = require('../controllers/SearchController');
 const Model = require('../models/Teacher');
 
-router.get('/', async function (req, res, next) {
+router.get('/', async function(req, res, next) {
 	const data = req.params;
-	const Teachers = await Model.find({}).populate('school')
-		.exec();
+	const Teachers = await Model.find({}).populate('school').exec();
 	res.render('search', {
 		query: ' ',
 		results: Teachers

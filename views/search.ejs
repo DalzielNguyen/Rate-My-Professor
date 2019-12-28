@@ -39,7 +39,7 @@
           <a href="/teacher/<%= teacher.teacher_id %>">
             <span class="th cate"><i class="fas fa-chalkboard-teacher"></i>Teacher</span>
             <span class="th name"><%= teacher.title%> <%=teacher.name %></span>
-            <span class="th"><%=teacher.school.name%></span>
+            <span class="th"><%=teacher.school[0].name%></span>
           </a>
         </li>
         <% }) %>

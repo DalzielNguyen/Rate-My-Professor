@@ -5,20 +5,22 @@ class SearchController {
 		const data = req.params;
 		let regx = new RegExp(data.text, 'i');
 		const Teachers = await Model.find({
-				$or: [{
+			$or: [
+				{
 					name: regx
-				}, {
+				},
+				{
 					title: regx
-				}]
-			}).populate('school')
+				}
+			]
+		})
+			.populate('school')
 			.exec();
-		// TODO: tìm kiếm ra 1 đống data để in ở trang search
 		res.render('search', {
 			query: data.text,
 			results: Teachers
 		});
 	}
-
 }
 
 module.exports = new SearchController();
