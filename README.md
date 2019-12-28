@@ -8,6 +8,8 @@ Các tính năng đã hoàn thành:
 - 28/12/2019: Back-end, Front-End tạm xong. Thực hiện 1 số testcase cơ bản. 
   + Báo cáo đã được thêm vào, Test lỗi ghi lại ( trong file Excel)
   + Kiểm thử và báo lại lỗi (Sang, Hiếu)
-  + Hướng giải quyết ( Thắng, Lộc)
+  + Hướng giải quyết ( Thắng, Lộc), Chỉnh lại UI (Sang)
   + Kiểm tra lại Database và Server (A. Hy)
+  + Viết file Excel test case (Sang, Hiếu), Test report(Thắng, Lộc)
+  
   
