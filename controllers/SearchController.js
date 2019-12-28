@@ -3,7 +3,10 @@ const Model = require('../models/Teacher');
 class SearchController {
 	async getSearch(req, res, next) {
 		const data = req.params;
-		const Teachers = await Model.find({ $text: { $search: data.text } }).exec();
+		let regx = new RegExp(data.text, 'i');
+		const Teachers = await Model.find({
+			$or: [ { name: regx }, { title: regx } ]
+		}).exec();
 		console.log(Teachers);
 		console.log(Teachers.length);
 		// TODO: tìm kiếm ra 1 đống data để in ở trang search

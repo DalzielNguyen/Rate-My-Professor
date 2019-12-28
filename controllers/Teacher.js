@@ -58,7 +58,7 @@ class TeacherController {
 			})
 			.catch(function(err) {
 				if (err.errors.username) {
-					json.message = 'You has review this teacher!';
+					json.message = 'You has reviewed this teacher!';
 				}
 			});
 		return res.status(code).json(json);
@@ -68,16 +68,20 @@ class TeacherController {
 		let json = {};
 		let code = 500;
 		const data = req.body;
-		const Rate = await new ReplyModel({
-			username: req.session.username,
-			review_id: req.params.id,
-			content: data.content
-		})
-			.save()
-			.then(function() {
-				json.message = 'Successfully!';
-				code = 200;
-			});
+		if (req.session.username != null) {
+			const Rate = await new ReplyModel({
+				username: req.session.username,
+				review_id: req.params.id,
+				content: data.content
+			})
+				.save()
+				.then(function() {
+					json.message = 'Successfully!';
+					code = 200;
+				});
+		} else {
+			json.message = 'Please login!';
+		}
 		return res.status(code).json(json);
 	}
 
