@@ -3,7 +3,7 @@ const router = express.Router();
 const UserController = require('../controllers/User');
 
 router.get('/', function(req, res, next) {
-  res.render('home', { title: 'Express'});
+	res.render('home', { title: 'Trang chủ' });
 });
 
 router.get('/login', UserController.getLogin);
