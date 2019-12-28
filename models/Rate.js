@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const uniqueValidator = require('mongoose-unique-validator');
+
 require('./React');
 require('./Reply');
 const RateSchema = new Schema({
@@ -8,7 +10,6 @@ const RateSchema = new Schema({
 	},
 	username: {
 		type: String,
-		unique: true,
 	},
 	content: {
 		type: String
@@ -44,6 +45,10 @@ RateSchema.virtual('user', {
   localField: 'username',
   foreignField: 'username',
 });
+
+RateSchema.index({ teacher_id: 1, username: 1 }, { unique: true });
+
+RateSchema.plugin(uniqueValidator);
 
 //Export model
 module.exports = mongoose.model('Rate', RateSchema);

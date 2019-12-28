@@ -3,10 +3,10 @@
     <div class="search-section">
       <h2>Find what you looking for.</h2>
       <div class="search-box">
-        <form id="formSearch" action="" method="POST">
+        <form id="formSearch" action="" method="GET">
           <div class="form-group">
             <div class="input-group">
-              <input class="form-control" type="text" name="data" placeholder="Find your professor..." aria-label="Search">
+              <input class="form-control" type="text" name="data" id="searchQuery" placeholder="Find your professor..." aria-label="Search">
               <div class="input-group-append">
                 <button class="btn input-group-text">
                   <i class="fal fa-search"aria-hidden="true"></i>
@@ -73,3 +73,13 @@
     <h3>support@ratemyprofessor.com</h3>
   </div>
 </main>
+<script>
+  $(document).ready(function () {
+
+    $("#formSearch").submit(function () {
+      const query = $("#searchQuery").val().trim();
+      window.location.href=`/search/${query}`;
+      return false;
+    })
+  })
+</script>

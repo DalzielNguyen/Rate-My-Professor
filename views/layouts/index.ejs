@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
+    <title>RateMyProfessors - </title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,500i,700&display=swap&subset=vietnamese" rel="stylesheet">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -34,7 +34,11 @@
         </ul>
       </div>
       <div class="nav-login">
-        <a href="/user/login">LOG IN/ SIGN UP</a>
+        <% if(locals.user) {%>
+          <span><%=locals.user.name%></span>
+        <% } else { %>
+          <a href="/user/login">LOG IN/ SIGN UP</a>
+        <% } %>
       </div>
     </nav>
   </header>

@@ -5,14 +5,7 @@ const ReplyModel = require('../models/Reply');
 const ReactModel = require('../models/React');
 
 class IndexController {
-	async postSearch(req, res, next) {
-		let json = {};
-		let code = 200;
-		const data = req.body;
-		console.log(data);
-		res.redirect('/search/' + data.data);
-		return res.status(code).json(json);
-	}
+
 }
 
 module.exports = new IndexController();

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const IP = 'localhost:27017';
-const DATABASE = 'myproject';
+const DATABASE = 'RateMyProfessors'; 
 mongoose
 	.set('useNewUrlParser', true)
 	.set('useFindAndModify', false)

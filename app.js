@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const logger = require('morgan');
+const UserController = require('./controllers/User');
 
 var app = express();
 
@@ -30,6 +31,12 @@ app.use(
 	})
 );
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(async function(req, res, next){
+	if (req.session.username){
+		res.locals.user = await UserController.getUserInfo(req.session.username);
+	}
+	next();
+});
 
 require('./Database');
 require('./Router')(app);

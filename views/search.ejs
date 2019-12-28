@@ -1,10 +1,10 @@
 <main id="search">
-  <h1>Search Results for <b><%=query%></b>: <%=len_res%> results</h1>
+  <h1>Search Results for <b><%=query%></b>: <%=results.length%> results</h1>
   <div class="search-box">
-    <form id="formSearch2" action="" method="POST">
+    <form id="formSearch" action="" method="POST">
       <div class="form-group search">
         <div class="input-group">
-          <input class="form-control" type="text" name="data" value="<%=query%>" placeholder="Find the professor/school/something..." aria-label="Search">
+          <input class="form-control" type="text" id="searchQuery" name="data" value="<%=query%>" placeholder="Find the professor/school/something..." aria-label="Search">
           <div class="input-group-append">
             <button class="btn input-group-text">
               <i class="fal fa-search"aria-hidden="true"></i>
@@ -34,16 +34,25 @@
     </div>
     <div class="results-body">
       <ul>
-        <% for (var i = 0; i < len_res; i++) { %>
+        <% results.forEach(teacher => { %>
         <li>
-          <a href="/teacher/<%= list_res[i].teacher_id %>">
+          <a href="/teacher/<%= teacher.teacher_id %>">
             <span class="th cate"><i class="fas fa-chalkboard-teacher"></i>Teacher</span>
-            <span class="th name"><%= list_res[i].title%> <%=list_res[i].name %></span>
-            <span class="th">HCMUS</span>
+            <span class="th name"><%= teacher.title%> <%=teacher.name %></span>
+            <span class="th"><%=teacher.school.name%></span>
           </a>
         </li>
-        <% } %>
+        <% }) %>
       </ul>
     </div>
   </div>
 </main>
+<script>
+  $(document).ready(function () {
+    $("#formSearch").submit(function () {
+      const query = $("#searchQuery").val().trim();
+      window.location.href=`/search/${query}`;
+      return false;
+    })
+  })
+</script>

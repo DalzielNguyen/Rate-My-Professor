@@ -58,6 +58,12 @@ class UserController {
 			});
 		return res.status(code).json(json);
 	}
+
+	async getUserInfo(username) {
+		return await Model.findOne({
+			username: username
+		});
+	}
 }
 
 module.exports = new UserController();

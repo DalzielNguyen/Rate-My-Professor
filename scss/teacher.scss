@@ -131,6 +131,9 @@
           &:hover ~ input:checked ~ label{
             color: #158060;
           }
+          &:hover{
+            cursor: pointer;
+          }
         }
       }
       .rate-content{
